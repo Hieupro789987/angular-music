@@ -1,0 +1,27 @@
+<section class="container artist">
+
+    <div class="artist__information">
+        <div class="artist__information-left">
+            <h2 class="artist__information-name">{{infoArtist?.name}}</h2>
+            <div class="artist__information-introduce">
+                <p class="artist__information-introduce-text">
+                    {{infoArtist?.description}}
+                </p>
+            </div>
+            <a href="#">...Xem thêm</a>
+            <p class="artist__information-follow">{{infoArtist?.favourite}} QUAN TÂM</p>
+            <p class="artist__information-songs">{{listSong.length}} BÀI NHẠC</p>
+        </div>
+        <div class="artist__information-right">
+            <img [src]="infoArtist?.image" [alt]="infoArtist?.name">
+        </div>
+
+    </div>
+    
+    <!--child components-->
+
+    <app-carousel [flexValue]="'20%'" [list]="listSong" ></app-carousel>
+
+
+</section>
+

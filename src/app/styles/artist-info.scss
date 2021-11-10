@@ -1,0 +1,61 @@
+.artist {
+    width: 100%;
+    height: 410px;
+    max-height: 410px;
+    background-image: linear-gradient(to right,#d9e4e5, #d5e2e2, #dbe7e6);
+
+    &__information{
+        height: 100%;
+        display: flex;
+
+
+            &-left{
+                flex: 1 1 70%;
+                max-width: 70%;
+                padding-top: 50px;
+                padding-left: 35px;
+                margin-right: 150px;
+
+            }
+            
+            &-name{
+                font-size: 2.5rem;
+                color: $color-white;
+                font-weight: 700;
+            }
+            &-introduce {
+                color: black;
+                padding-top: 15px;
+                line-height: 20px;
+
+                    &-text {
+                        width:100%;
+                        white-space:pre-line;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        -webkit-line-clamp: 3;// số dòng muốn hiển thị
+                        -webkit-box-orient: vertical;
+                        display: -webkit-box;
+                    }
+            }
+
+            &-follow, &-songs {
+                color: $color-white;
+                font-weight: 400;
+                margin-top: 25px;
+            }
+
+            &-right {
+                display: flex;
+                align-items: center;
+                flex: 1 1 30%;
+                padding-right: 35px;
+
+                    img {
+                        max-width: 100%;
+                        border-radius: 50%;
+                    }
+            }
+    }
+
+}

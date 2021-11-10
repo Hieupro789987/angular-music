@@ -1,0 +1,102 @@
+
+.carousel {
+    border-radius: 5px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 23px;
+    overflow-x: hidden;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+
+        &-heading  {
+            padding-top: 30px;
+            padding-bottom: 25px;
+            color: $color-white;
+            font-weight: 500;
+        }
+    }
+
+    &__albums{
+        display: flex;
+ 
+        padding-bottom: 20px;
+        transition: 0.25s ease;
+        position: relative;
+        left: 0;
+  
+
+        &-item {
+     
+            border-radius: 5px;
+            padding: 17px;
+            flex-grow: 1;
+            flex-shrink: 0;
+        
+            &--image {
+                position: relative;
+                max-width: 100%;
+                height: 250px;
+                object-fit: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                border-radius: 5px;
+                border-radius: 10px;
+        
+                &---icon {
+                    position: absolute;
+                    width: 50px;
+                    height: 50px;
+                    background-color: #fff;
+                    border-radius: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    bottom: 20px;
+                    right: 20px;
+                    cursor: pointer;
+                    
+        
+                        span {
+                            color: black;
+                            font-size: 2rem !important;
+                        }
+                }
+            }
+            &--name {
+                margin: 10px 0;
+                color: $color-white;
+            }
+            &--artist {
+                color: $color-gray;
+            }
+        }
+    }
+}
+
+
+
+.moving {
+    
+    &__prev,&__next {
+        background-color: transparent;
+        border: none;
+        border-radius: 5px;
+        padding: 7px;
+        transition: 0.25s ease;
+        color: $color-white;
+  
+
+        &:hover {
+            background-color: $color-red !important;
+
+            span {
+                color:white;
+            }
+        }
+
+    }
+}

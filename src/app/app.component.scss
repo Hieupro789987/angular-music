@@ -1,0 +1,36 @@
+;
+
+.sidebar {
+    float: left;
+    height: calc(100% - 100px);
+    width: 250px;
+}
+
+.main {
+    height: calc(100% - 100px);
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+.footer {
+    clear: left;
+    height: 100px;
+}
+
+
+
+.main::-webkit-scrollbar {
+    width: 5px;
+    background: linear-gradient(to left, #ffffff, #ffffff)  !important;
+}
+
+   
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(255, 0, 0); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+  }

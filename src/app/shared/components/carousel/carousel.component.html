@@ -1,0 +1,44 @@
+
+<section class="carousel" >
+    <div class="carousel__inner">
+        <h3 class="carousel__inner-heading">{{cate?.title ? cate?.title : 'Nhạc hot'}}</h3>
+        <ng-template [ngIf]="totalClick > 1">
+            <div class="moving">
+                <button class="moving__prev" (click) ="onPrev()">
+                    <ng-template [ngIf]="!isCheckPrev">
+                        <span class="material-icons-outlined" >
+                            arrow_back_ios
+                        </span>
+                    </ng-template>
+                </button>
+                <button class="moving__next" (click) ="onNext()">
+                    <ng-template [ngIf]="!isCheckNext">
+                        <span class="material-icons-outlined" >
+                            arrow_forward_ios
+                        </span>
+                    </ng-template>
+                </button>
+            </div>
+        </ng-template>
+
+    </div>
+
+    
+    <div #album class="carousel__albums">
+        <div class="carousel__albums-item" [style.flexBasis]="flexValue" #item  *ngFor="let type of list">
+            <div class="carousel__albums-item--image" style="background-image: url({{type.image}});cursor: pointer;">
+                <div class="carousel__albums-item--image---icon">
+                    <span class="material-icons-sharp">
+                        play_arrow
+                    </span>     
+                </div>
+            </div>
+            <h4 class="carousel__albums-item--name" style="text-transform: capitalize">{{type.title ? type.title: type.name}}</h4>
+            <ng-template [ngIf]= "type.nameArtist">
+                <p class="carousel__albums-item--artist">{{type.nameArtist}}</p>
+            </ng-template>
+            
+        </div>
+    </div>
+</section>
+

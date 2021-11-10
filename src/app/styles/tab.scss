@@ -1,0 +1,43 @@
+.tabs {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    
+        &__inner {
+            padding: 10px;
+
+            &-nav {
+                list-style: none;
+                display: inline-block;
+                border: 1px solid $color-white;
+                padding: 5px 35px;
+                border-radius: 25px;
+    
+                &--item {
+                    display: inline-block;
+                    transition: 0.25s ease;
+    
+                }
+            }
+        }
+
+
+
+}
+
+.tabs__inner-nav--item:not(:last-child) {
+    margin-right: 25px;
+}
+.nav-link {
+    color:$color-white;
+}
+.activeTab {
+    background-color:  $color-red;
+    padding: 5px 10px;
+    border-radius: 25px;
+    color:white;
+
+        .nav-link {
+            color:white 
+        }
+}

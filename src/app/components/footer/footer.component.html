@@ -1,0 +1,76 @@
+<section class="audio container-fluid-xxl ">
+    <div class="audio__left">
+        <img src="https://i.scdn.co/image/ab67616d0000b2731daef3ae0a812f2be4778485" alt="" class="audio__left-image">
+        <div class="audio__left-info">
+            <h3 class="audio__left-info--name">Em đâu rồi</h3>
+            <p class="audio__left-info--artist">Chi Dân</p>
+           
+        </div>
+    </div>    
+    <div class="audio__center">
+       <div class="audio__center-controls">
+           <!-- <div class="audio__controls-left">
+                <div class="audio__controls-favorite">
+                    <span class="material-icons-outlined">
+                        favorite_border
+                    </span>
+                </div>
+                <div class="audio__controls-zoom">
+                    <span class="material-icons-outlined">
+                        zoom_out_map
+                    </span>
+                </div>
+
+                <div class="audio__controls-download">
+                    <span class="material-icons-outlined">
+                        file_download
+                    </span>
+                </div>
+           </div> -->
+            <div class="audio__center-controls--box">
+                <div class="audio__controls-random">
+                    <span class="material-icons-outlined">
+                        shuffle
+                    </span>
+                </div>
+                <div class="audio__controls-prev">
+                    <span class="material-icons-sharp">
+                        skip_previous
+                    </span>  
+                </div>
+                <div class="audio__controls-play" (click)= "isPlayAduio= !isPlayAduio">
+                    <span class="material-icons-outlined">
+                        {{ isPlayAduio ? 'play_circle_outline' : 'pause'}}
+                    </span>
+                </div>
+                <div class="audio__controls-next">
+                    <span class="material-icons-sharp">
+                        skip_next
+                    </span>
+                </div>
+                <div class="audio__controls-replay">
+                    <span class="material-icons-outlined">
+                        replay
+                    </span>
+                </div>
+            </div>
+       </div>
+       <div class="audio__center-time">
+           <span class="audio__center-time--start">00:00</span>
+           <input type="range" min="0" max="360" id="audioTime"> 
+           <span class="audio__center-time--duration">04:00</span>
+       </div>
+    </div>
+    <div class="audio__right">
+        <div>
+            <span class="material-icons-outlined">
+                volume_up
+            </span>
+            <input type="range" min="0" max="100" id="volumn">
+        </div>
+        <span class="material-icons-outlined listQueue">
+            queue_music
+        </span>
+    </div>    
+</section>
+

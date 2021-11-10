@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "music-application-29672": {
+      "hosting": {
+        "myApp": [
+          "music-application-29672"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "music-application-29672"
+  }
+}
