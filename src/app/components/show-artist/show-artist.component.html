@@ -1,0 +1,16 @@
+
+
+<section class="container artist">
+    <div class="row">
+        <h2>Nghệ Sỉ</h2>
+
+        <div class="col col-xl-2 artist__item" *ngFor="let a of list" style="margin-bottom: 15px;">
+            <img [src]="a.image" [alt]="a.name" style="clip-path:circle(50%);width: 100%;" [routerLink]="['/infoArtist', a.id]">
+            <div class="info">
+                <h2 style="color:white; font-weight:500;font-size: 0.95rem;text-align:center;margin-top: 15px;">{{a.name}}</h2>
+            </div>
+        </div>
+
+    </div>
+</section>
+

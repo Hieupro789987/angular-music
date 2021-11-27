@@ -1,0 +1,17 @@
+<div class="play-list">
+  <h2>PlayList</h2>
+  <div class="play-list-inner">
+    <div class="play-list-inner-create" (click)="onCreatePlayList()">
+      <span class="material-icons">
+        add
+      </span>
+      <p>Tạo playList mới</p>
+    </div>
+
+    <div class="play-list-inner-item" *ngFor ="let u of playList">
+      <img [src]="u.image" [alt]="u.title" (click)="chooseMyAlbum(u.id)">
+      <h3>{{u.title}}</h3>
+    </div>
+  </div>
+
+</div>

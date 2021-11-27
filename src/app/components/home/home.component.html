@@ -1,14 +1,9 @@
-<app-carousel [flexValue]="'20%'" [list]="dataList[0]" ></app-carousel>
+
 
 <app-tab></app-tab>
 
-<div class="container" style="display: flex">
-  <div style="flex:0 0 50%">
-        <app-list [listSong]= "listSong"></app-list>
+<div class="container" >
+  <div style="flex:0 0 100%">
+        <app-list [listSong]= "listSong" [start]="0" [end]="listSong.length" [hide]="true"></app-list>
   </div>
-
-  <div style="flex: 1 1 50%" style="overflow-x: hidden;">
-    <app-carousel [flexValue]="'100%'" [list]="dataList[0]" ></app-carousel>
-  </div>
-
 </div>

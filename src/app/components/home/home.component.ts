@@ -1,5 +1,6 @@
-import { ISong } from './../../models/Song';
-import { Component, OnInit } from '@angular/core';
+import { CarouselComponent } from './../../shared/components/carousel/carousel.component';
+import { ISong } from '../../models/Song';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
   collection,
   CollectionReference,
@@ -23,6 +24,7 @@ export class HomeComponent implements OnInit {
   public cate: ICategory[] = [];
   public listSong: ISong[] = [];
 
+
   constructor(private afs: Firestore) {
 
     const cateList = collectionData<ICategory>(
@@ -45,13 +47,15 @@ export class HomeComponent implements OnInit {
       collection(this.afs, 'Song') as CollectionReference<ISong>
     );
 
-    song.subscribe(val => this.listSong = val);
+    song.subscribe(val =>  {
+      this.listSong = val
+    });
 
 
   }
 
   ngOnInit() {}
-  
+ 
 }
 
 

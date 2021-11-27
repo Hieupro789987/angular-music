@@ -1,29 +1,57 @@
 <section class="list">
   <div class="list__inner">
-    <div class="list__inner-item" *ngFor="let song of listSong">
-      <span class="list__inner-item--pos">1</span>
-      <div class="list__inner-item--box">
-        <div class="list__inner-item--box---image"
-          style="background-image:url({{song.image}}) ;">
+    <div class="list__inner-item" *ngFor="let song of listSong |  slice : start  : end;let i = index ">
+      <span class="list__inner-item--pos">
+
+        <span *ngIf="this.params == 'bangxephang';else other" class="pos" [style.color]="items[i] ? items[i] : 'white'">
+            {{i+1}} 
+        </span>
+        <ng-template #other >
+          <span class="material-icons-outlined">
+            music_note
+          </span>
+        </ng-template>
+        
+
+        <div class="gif " #gif>
+          <img src="../../../../assets/icon-playing.gif" alt="" style="width:15px" *ngIf="isCheckMusiPlaying">
+        </div>
+
+      </span>
+      <div class="list__inner-item--box" [style.flex]="!hide ? '0 0 80%' : ''">
+        <div class="list__inner-item--box---image" style="background-image:url({{song.image}}) ;"
+          (click)="onChoose(song)">
         </div>
         <div class="list__inner-item--box---info">
           <p class="list__inner-item--box---info----name"><strong>{{song.name}}</strong></p>
-          <p class="list__inner-item--box---info----artist" ><a [routerLink]="['/infoArtist', song.artistID]">{{song.nameArtist}}</a></p>
+          <p class="list__inner-item--box---info----artist">
+            <a [routerLink]="['/infoArtist', song.artistID]">{{song.nameArtist}}</a>
+          </p>
         </div>
 
       </div>
-      <span class="list__inner-item--duration">05:21</span>
-      <div class="list__inner-item--controls">
-        <div class="list__inner-item--controls---hearts">
-          <span class="material-icons-outlined">
-            favorite_border
+    
+        <span class="list__inner-item--duration">{{ !hide ?" " :song.duration}}</span>
+      
+     
+      <div class="list__inner-item--controls" *ngIf ="hide"  >
+        <div class="list__inner-item--controls---hearts" #favorite (click)="onClickFavorite(song)"
+          style="user-select:none">
+          <span class="material-icons-outlined"
+            [style.color]="song.actions.love.user.includes(userIsLiked) ? 'red': ''">
+            {{ song.actions.love.user.includes(userIsLiked) ? 'favorite':'favorite_border '}}
           </span>
         </div>
-        <div class="list__inner-item--controls---more">
+        <div class="list__inner-item--controls---add" (click)="openModalList(song)">
+          <span class="material-icons">
+            playlist_add
+          </span>
+        </div>
+        <!-- <div class="list__inner-item--controls---more">
           <span class="material-icons-outlined">
             more_horiz
           </span>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

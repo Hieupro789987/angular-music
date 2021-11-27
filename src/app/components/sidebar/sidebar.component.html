@@ -12,32 +12,34 @@
         <h2 class="navigation__inner-heading">DANH MỤC</h2>
         <ul class="navigation__inner-group">
           <li class="navigation__inner-group--item " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-            [routerLink]="['home']">
+           >
             <span class="material-icons-outlined">
               home
             </span>
-            <p class="navigation_item-link">Trang chủ</p>
+            <a class="navigation_item-link"  [routerLink]="['home']">Trang chủ</a>
 
           </li>
           <li class="navigation__inner-group--item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-            [routerLink]="['category']">
+            >
             <span class="material-icons-outlined">
               library_music
             </span>
-            <p class="navigation_item-link">Thể Loại</p>
+            <a class="navigation_item-link" [routerLink]="['category']">Thể Loại</a>
 
           </li>
-          <li class="navigation__inner-group--item">
+          <li class="navigation__inner-group--item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+         >
             <span class="material-icons-outlined">
               person_outline
             </span>
-            <a class="navigation_item-link">Nhạc Sĩ</a>
+            <a class="navigation_item-link"  [routerLink]="['artist']">Nhạc Sĩ</a>
           </li>
-          <li class="navigation__inner-group--item">
+          <li class="navigation__inner-group--item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+         >
             <span class="material-icons-outlined">
               show_chart
             </span>
-            <a class="navigation_item-link">Bảng Xếp Hạng</a>
+            <a class="navigation_item-link"  [routerLink]="['bangxephang']">Bảng Xếp Hạng</a>
           </li>
         </ul>
       </div>
@@ -54,13 +56,13 @@
             <span class="material-icons-outlined">
               favorite_border
             </span>
-            <a class="navigation_item-link">Yêu thích</a>
+            <a class="navigation_item-link" [routerLink]="['profile/mySong']">Yêu thích</a>
           </li>
           <li class="navigation__inner-group--item">
             <span class="material-icons-outlined">
               folder
             </span>
-            <a class="navigation_item-link">PlayList</a>
+            <a class="navigation_item-link"  [routerLink]="['profile/myplaylist']">PlayList</a>
           </li>
         </ul>
       </div>
@@ -71,7 +73,7 @@
             <span class="material-icons-outlined">
               create_new_folder
             </span>
-            <a class="navigation_item-link">Tạo playlist mới</a>
+            <a class="navigation_item-link" (click)="onCreatePlayList()">Tạo playlist mới</a>
           </li>
         </ul>
       </div>

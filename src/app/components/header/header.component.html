@@ -1,7 +1,8 @@
 <section class="container header">
+
   <div class="search">
 
-    <input type="search" class="search__input" placeholder=" ">
+    <input type="search" class="search__input" placeholder=" " (keyup.enter)="onSearch($event)">
     <label for="name" class="search__label">
       <span class="material-icons-outlined">
         search
@@ -11,10 +12,22 @@
   </div>
   <div class="controls">
     <div class="controls-item">
-      <a href="">
-        <span class="material-icons-outlined">
+      <a>
+        <span class="material-icons-outlined" *ngIf="!currentUser; else logouts" (click)="login()">
           account_circle
         </span>
+
+        <ng-template #logouts>
+          <!-- <span class="material-icons-outlined" >
+            logout
+         </span> -->
+          <a [routerLink]="['profile']">
+            <img [src]="currentUser?.photoURL" [alt]="currentUser?.displayName"
+              style="clip-path: circle();width: 50px;">
+          </a>
+
+        </ng-template>
+
       </a>
     </div>
     <div class="controls-item">

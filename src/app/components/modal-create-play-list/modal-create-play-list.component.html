@@ -1,0 +1,66 @@
+<ng-template [ngIf]="isPlayList.create">
+  <section class="modal-create-play-list ">
+    <div class="mask"></div>
+
+    <div class="modal ">
+      <div class="icon-close" (click)="close()">
+        <span class="material-icons">
+          close
+        </span>
+      </div>
+      <div class="title">
+        <h3>Tạo playList mới</h3>
+      </div>
+      <div class="input">
+        <input type="text" placeholder="Nhập tên playList" [(ngModel)]="titleName">
+      </div>
+      <div class="text">
+        <span>Danh Sách</span>
+        <p>Mọi ngưới có thể nhìn thấy playList này</p>
+      </div>
+
+      <div class="button">
+        <button type="button" (click)="create()">Tạo mới</button>
+      </div>
+    </div>
+
+  </section>
+</ng-template>
+
+<ng-template [ngIf]="isPlayList.list">
+  <section class="modal-create-play-list ">
+    <div class="mask"></div>
+
+    <div class="modal ">
+      <div class="icon-close" (click)="close()">
+        <span class="material-icons">
+          close
+        </span>
+      </div>
+      <div class="title">
+        <h3>Danh Sách</h3>
+      </div>
+      <div class=" btn-create" (click)="openModalCreate()">
+        <span class="material-icons-outlined">
+          add
+        </span>
+        <p>
+          Tạo playlist mới
+        </p>
+      </div>
+      <ng-container *ngFor="let u of playList">
+        <div class="item" (click)="choosePlayList(u.id)">
+          <span class="material-icons">
+            playlist_add
+          </span>
+
+          <p>{{u.title}}</p>
+        </div>
+
+      </ng-container>
+
+    </div>
+
+  </section>
+
+</ng-template>

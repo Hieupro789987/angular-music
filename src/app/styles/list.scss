@@ -11,19 +11,22 @@
             &:hover {
                 background-color: rgb(88, 86, 86);
                 border-radius: 5px;
+
             }
-    
+            
+
+
             &--pos {
                 flex: 0 0 10%;
                 max-width: 10%;
                 font-size: 2rem;
                 font-weight: 500;
                 color: red;
+                transition: 0.25s ease;
             }
     
             &--box {
                 flex: 0 0 40%;
-                max-width: 40%;
                 display: flex;
     
                 &---image {
@@ -46,11 +49,23 @@
     
                     &----name {
                         color: $color-white;
-                        
+                        font-size: 0.85rem;
+                        font-family: 500 !important;
+                        user-select: none;
+                        width:100%;
+                        white-space: pre-wrap; 
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                        display: -webkit-box;                        
                     }
                     &----artist {
                         font-size: 0.8rem;
-                        color: #9c9c9c;
+                
+                        a {
+                            color: #9c9c9c;
+                        }
                     }
                 }
             }
@@ -59,17 +74,20 @@
                 flex: 0 0 40%;
                 color: $color-white;
                 font-weight: 500;
+                font-size: 0.85rem;
             }
             &--controls {
                 flex: 0 0 10%;
                 display: flex;
                 align-items: center;
                 justify-content: space-evenly;
+               
     
-                &---hearts,&---more{
+                &---hearts,&---more, &---add{
                     cursor: pointer;
                     color: $color-white;
                     font-weight: 300;
+                    font-size: 0.95rem;
                 }
             }
         }

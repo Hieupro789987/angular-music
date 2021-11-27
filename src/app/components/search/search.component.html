@@ -1,0 +1,11 @@
+<ng-template [ngIf]="song?.length < 0 && artist?.length < 0">
+    <h2 style="text-align:center;margin-top:15px">Không tìm thấy</h2>
+</ng-template>
+
+<ng-template [ngIf]="song?.length > 0"> 
+    <app-carousel [flexValue]="'20%'" [list]="song"  [type]="'song'"></app-carousel>
+</ng-template>
+
+<ng-template [ngIf]="artist?.length > 0"> 
+    <app-carousel [flexValue]="'20%'" [list]="artist"  [type]="'Tác giả'"></app-carousel>
+</ng-template>

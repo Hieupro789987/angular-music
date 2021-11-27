@@ -1,27 +1,32 @@
 <section class="container tabs">
-    <div class="tabs__inner">
-        <ul class="tabs__inner-nav">
-            <li class="tabs__inner-nav--item activeTab ">
-                <a class="nav-link " aria-current="page" href="#">Tổng quan</a>
-            </li>
-            <li class="tabs__inner-nav--item">
-                <a class="nav-link" href="#">Bài hát</a>
-            </li>
-            <li class="tabs__inner-nav--item">
-                <a class="nav-link" href="#">Hoạt động</a>
-            </li>
-            <li class="tabs__inner-nav--item">
-                <a class="nav-link" href="#">Sự kiện</a>
-            </li>
-            <li class="tabs__inner-nav--item">
-                <a class="nav-link" href="#">MV</a>
-            </li>
-            <li class="tabs__inner-nav--item">
-                <a class="nav-link" href="#">Radio</a>
-            </li>
-            <li class="tabs__inner-nav--item">
-                <a class="nav-link" href="#">Tin tức</a>
-            </li>
-        </ul>
-    </div>
+  <div class="tabs__inner">
+    <ul class="tabs__inner-nav">
+      <li class="tabs__inner-nav--item" routerLinkActive="activeTab" [routerLinkActiveOptions]="{exact: true}"
+        >
+        <a class="nav-link " aria-current="page" [routerLink]="['tongquan']">Tổng quan</a>
+      </li>
+      <li class="tabs__inner-nav--item" routerLinkActive="activeTab" [routerLinkActiveOptions]="{exact: true}"
+       >
+        <a class="nav-link"  [routerLink]="['mySong']">
+          Bài hát
+        </a>
+      </li>
+      <li class="tabs__inner-nav--item" routerLinkActive="activeTab" [routerLinkActiveOptions]="{exact: true}"
+       >
+        <a class="nav-link"  [routerLink]="['myplaylist']">playList</a>
+      </li>
+      <li class="tabs__inner-nav--item">
+        <a class="nav-link" href="#">Sự kiện</a>
+      </li>
+      <li class="tabs__inner-nav--item">
+        <a class="nav-link" href="#">MV</a>
+      </li>
+      <li class="tabs__inner-nav--item">
+        <a class="nav-link" href="#">Radio</a>
+      </li>
+      <li class="tabs__inner-nav--item">
+        <a class="nav-link" href="#">Tin tức</a>
+      </li>
+    </ul>
+  </div>
 </section>

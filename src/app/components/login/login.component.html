@@ -1,0 +1,57 @@
+<section class="modal-login">
+  <div class="mask" (click)="closeLogin()"></div>
+  <div class="modal ">
+    <div class="modal-inner">
+      <div class="modal-inner-heading">
+        <h2>Beats Army</h2>
+        <span class="material-icons-outlined" style="cursor: pointer;" (click)="closeLogin()">
+          close
+        </span>
+      </div>
+      <div class="box">
+        <div class="left">
+          <div class="login">
+            <div class="login-title">
+              <h2>Đăng nhập</h2>
+            </div>
+            <div class="login-social">
+              <img src="../../../assets/google.png" style="cursor: pointer;" alt="" (click)="login()">
+            </div>
+            <p style="text-align: center;margin: 50px 0;">Hoặc đăng nhập với tài khoản khác </p>
+            <div class="login--form">
+              <form class="form">
+                <div class="form-box">
+                  <input type="search" class="box-input" placeholder=" ">
+                  <label for="name" class="box-label">
+                    <span class="material-icons-outlined">
+                      mail
+                    </span>
+                    EMAIL
+                  </label>
+                </div>
+                <div class="form-box">
+                  <input type="search" class="box-input" placeholder=" ">
+                  <label for="name" class="box-label">
+                    <span class="material-icons-outlined">
+                      lock
+                    </span>
+                    PASSWORD
+                  </label>
+                </div>
+              </form>
+            </div>
+            <div class="login-btn">
+              <button class="btn-login">Đăng nhập</button>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <h2>HELLO FRIEND</h2>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>

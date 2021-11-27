@@ -1,2 +1,9 @@
 @import 'variable';
 @import 'list';
+
+.gif {
+    display: none;
+}
+.active {
+    display: block !important;
+}

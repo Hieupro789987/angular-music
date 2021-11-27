@@ -1,0 +1,29 @@
+.player-queue {
+    position: sticky;
+    top: bottom;
+    bottom: 0;
+    width: 320px;
+    height: 100%;
+    background-color: black;
+    z-index: 9999999;
+    margin-left: auto;
+    overflow-y: scroll;
+
+}
+
+.player-queue::-webkit-scrollbar {
+    width: 5px;
+    background: linear-gradient(to left, #ffffff, #ffffff)  !important;
+}
+
+   
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(236, 91, 91); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+  }

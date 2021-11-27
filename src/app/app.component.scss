@@ -10,7 +10,9 @@
     height: calc(100% - 100px);
     scroll-behavior: smooth;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
+
 .footer {
     clear: left;
     height: 100px;

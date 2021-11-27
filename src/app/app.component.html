@@ -5,15 +5,27 @@
     <div class="sidebar" style="background-color: #292929;">
       <app-sidebar></app-sidebar>
     </div>
-    <div class="main" style="background-color: #1e1e1e;">
+    <div class="main" style="background-color: #1e1e1e; position: relative;">
             <ng-container class="container header" >
                 <app-header></app-header>
             </ng-container>
-
+        
         <router-outlet></router-outlet>
+
+        <app-player-queue></app-player-queue>
+       
+        
     </div>
     <div class="footer" >
         <app-footer></app-footer>
     </div>
 </section>
+
+<ng-template [ngIf]="isOpen">
+    <app-login ></app-login>
+</ng-template>
+
+<ng-template [ngIf]="isModalPlayList.isOpen">
+    <app-modal-create-play-list [isPlayList]="isModalPlayList"></app-modal-create-play-list>
+</ng-template>
 

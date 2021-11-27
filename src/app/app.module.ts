@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
 import { FeatureModule } from './components/feature.module';
 import { NgModule } from '@angular/core';
@@ -20,19 +21,15 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
   ],
   imports: [
     BrowserModule,
+    FeatureModule,
     AppRoutingModule,
 
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
-  
-
-    FeatureModule,
     
-
-
-  ],
+],
   providers: [],
   bootstrap: [AppComponent]
 })

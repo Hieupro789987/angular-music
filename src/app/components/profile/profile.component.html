@@ -1,0 +1,19 @@
+<section class="container profile">
+  <div class="top">
+    <button class="top-logout" (click)="logout()">Đăng Xuất</button>
+  </div>
+  <div class="info">
+    <img [src]="currentUser?.photoURL" [alt]="currentUser?.displayName" class="info-avatar">
+    <h2 class="info-name">{{currentUser?.displayName ? currentUser?.displayName : 'Tên của bạn là gì'}}</h2>
+  </div>
+
+  <div class="tab">
+    <app-tab></app-tab>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+  <div class="test">
+
+  </div>
+</section>

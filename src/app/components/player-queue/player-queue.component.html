@@ -1,0 +1,6 @@
+<section class="player-queue "  [@openClose]="isDislay ? 'closed' : 'open'">
+    <div class="player-queue-inner">
+        <app-list [listSong]="songList" [start]="0" [end]="songList.length" [hide]="false" #listComponent></app-list>
+    </div>
+
+</section>

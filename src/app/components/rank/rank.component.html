@@ -1,0 +1,10 @@
+<section class="rank container">
+    <h2 class="rank-heading">Xếp hạng theo lượt yêu thích</h2>
+
+    <div class="rank-list">
+        <app-list  [listSong]= "listSong" [start]="start" [end]="end"></app-list> 
+    </div>
+    <div style="text-align: center;" *ngIf="listSong.length != end">
+        <button class="btn-all" (click)="onViewAll()">Xem Tất Cả</button>
+    </div>
+</section>

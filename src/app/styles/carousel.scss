@@ -32,9 +32,10 @@
      
             border-radius: 5px;
             padding: 17px;
-            flex-grow: 1;
+            flex-grow:0;
             flex-shrink: 0;
-        
+            animation: FadeIn 0.25s ease;
+
             &--image {
                 position: relative;
                 max-width: 100%;
@@ -45,6 +46,7 @@
                 background-size: cover;
                 border-radius: 5px;
                 border-radius: 10px;
+               
         
                 &---icon {
                     position: absolute;
@@ -98,5 +100,16 @@
             }
         }
 
+    }
+}
+
+@keyframes FadeIn {
+    to {
+        opacity: 0;
+        transform: scale(0);
+    }
+    from {
+        opacity: 1;
+        transform: scale(1);
     }
 }

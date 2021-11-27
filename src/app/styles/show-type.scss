@@ -1,0 +1,114 @@
+.playList-type {
+    margin-top: 15px;
+    padding-left:35px;
+    padding-right: 35px;
+    display: flex;
+
+        &__left {
+            flex: 1 1 25%;
+            margin-right: 25px;
+            padding-top: 80px;
+
+            .media__image {
+                margin-bottom: 15px;
+
+                img {
+                    border-radius: 5px;
+                    object-fit: contain;
+                }
+            }
+
+            .media__content {
+                text-align: center;
+
+                    &-title {
+                        color: white;
+                        font-size: 0.95rem;
+                        margin-bottom: 15px;
+                        font-weight: 500;
+                    }
+
+                    &-play {
+                        
+                        padding: 5px 15px;
+                        background-color: $color-red-blur;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 5px;
+                        color: white;
+                    }
+            }
+        }
+
+
+        &__right {
+           flex: 1 1 75%;
+            .playList__content {
+                
+                    .description {
+                        color: white;
+                        font-size: 0.95rem;
+                        span {
+                            color: $color-gray !important;
+                        }
+                    }
+                    .header{
+                        margin-top: 15px;
+                        display: flex;
+                        justify-content: space-between;
+                       
+                        &__left {
+                            color: $color-gray;
+                            font-size: 0.7rem;
+                            font-weight: 700;
+                            display: flex;
+                            align-items: center;
+                        }
+                        &__center {
+                            color: $color-gray;
+                            font-size: 0.7rem;
+                            font-weight: 700;
+                            display: flex;
+                            align-items: center;
+                        }
+                        &__right{
+
+                           select {
+                            border: none;
+                            outline: none;
+                            background: transparent;
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            appearance: none;
+                            border-radius: 5px;
+                            border: 1px solid $color-gray;
+                            margin: 0;
+                            display: block;
+                            width: 100%;
+                            padding: 5px 8px;
+                            font-size: 14px;
+                            color: #714BB9;
+                            
+                          
+                          &:after {
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            width: 50px;
+                            height: 100%;
+                            line-height: 38px;
+                            content: '\2228';
+                            text-align: center;
+                            color: #714BB9;
+                            font-size: 24px;
+                            border-left: 1px solid #3C1C78;
+                            z-index: -1;
+                          }
+
+                           }     
+                        }
+                    }
+            }
+        }
+}

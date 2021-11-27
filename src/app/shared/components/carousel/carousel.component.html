@@ -1,7 +1,7 @@
 
-<section class="carousel" >
+<section class="carousel"   >
     <div class="carousel__inner">
-        <h3 class="carousel__inner-heading">{{cate?.title ? cate?.title : 'Nhạc hot'}}</h3>
+        <h3 class="carousel__inner-heading">{{title}}</h3>
         <ng-template [ngIf]="totalClick > 1">
             <div class="moving">
                 <button class="moving__prev" (click) ="onPrev()">
@@ -25,20 +25,26 @@
 
     
     <div #album class="carousel__albums">
-        <div class="carousel__albums-item" [style.flexBasis]="flexValue" #item  *ngFor="let type of list">
-            <div class="carousel__albums-item--image" style="background-image: url({{type.image}});cursor: pointer;">
+        <div class="carousel__albums-item" 
+            [style.flexBasis]="flexValue" 
+            #item  
+            *ngFor="let  item of list" [ngStyle]="shape" 
+            (click)="onChooseAlbum(item)"
+            >
+            <div class="carousel__albums-item--image" style="background-image: url({{item.image}});cursor: pointer;" >
                 <div class="carousel__albums-item--image---icon">
-                    <span class="material-icons-sharp">
+                    <span class="material-icons-sharp" >
                         play_arrow
                     </span>     
                 </div>
             </div>
-            <h4 class="carousel__albums-item--name" style="text-transform: capitalize">{{type.title ? type.title: type.name}}</h4>
+            <h4 class="carousel__albums-item--name" style="text-transform: capitalize">{{item.title ? item.title: item.name}}</h4>
             <ng-template [ngIf]= "type.nameArtist">
-                <p class="carousel__albums-item--artist">{{type.nameArtist}}</p>
+                <p class="carousel__albums-item--artist">{{item.nameArtist}}</p>
             </ng-template>
-            
         </div>
     </div>
 </section>
+<!-- [routerLink]="['/category', type.id]" -->
 
+<router-outlet>

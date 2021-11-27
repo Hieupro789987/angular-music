@@ -4,7 +4,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { ListComponent } from './components/list/list.component';
 import { SharedRoutingModule } from './shared-routing.module';
 import { TabComponent } from './components/tab/tab.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -15,7 +15,8 @@ import { TabComponent } from './components/tab/tab.component';
   ],
   imports: [
     CommonModule,
-    SharedRoutingModule
+    HttpClientModule,
+    SharedRoutingModule,
   ],
   exports: [
     CarouselComponent,

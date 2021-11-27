@@ -3,8 +3,11 @@ $color-red: #e01e3e;
 $color-red-blur:rgb(250, 76, 76);
 $color-white: #bebebe;
 $color-gray: #575757;
-
+$width: 20%;
 
 $space-top: 25px;
 
 
+:export {
+    $width: 20%;
+}

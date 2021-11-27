@@ -1,15 +1,16 @@
 <section class="audio container-fluid-xxl ">
-    <div class="audio__left">
-        <img src="https://i.scdn.co/image/ab67616d0000b2731daef3ae0a812f2be4778485" alt="" class="audio__left-image">
-        <div class="audio__left-info">
-            <h3 class="audio__left-info--name">Em đâu rồi</h3>
-            <p class="audio__left-info--artist">Chi Dân</p>
-           
-        </div>
-    </div>    
-    <div class="audio__center">
-       <div class="audio__center-controls">
-           <!-- <div class="audio__controls-left">
+  <div class="audio__left">
+
+    <img [src]="song?.image" [alt]="song?.name" class="audio__left-image" #image>
+    <div class="audio__left-info">
+      <h3 class="audio__left-info--name">{{song?.name}}</h3>
+      <p class="audio__left-info--artist">{{song?.nameArtist}}</p>
+
+    </div>
+  </div>
+  <div class="audio__center">
+    <div class="audio__center-controls">
+      <!-- <div class="audio__controls-left">
                 <div class="audio__controls-favorite">
                     <span class="material-icons-outlined">
                         favorite_border
@@ -27,50 +28,60 @@
                     </span>
                 </div>
            </div> -->
-            <div class="audio__center-controls--box">
-                <div class="audio__controls-random">
-                    <span class="material-icons-outlined">
-                        shuffle
-                    </span>
-                </div>
-                <div class="audio__controls-prev">
-                    <span class="material-icons-sharp">
-                        skip_previous
-                    </span>  
-                </div>
-                <div class="audio__controls-play" (click)= "isPlayAduio= !isPlayAduio">
-                    <span class="material-icons-outlined">
-                        {{ isPlayAduio ? 'play_circle_outline' : 'pause'}}
-                    </span>
-                </div>
-                <div class="audio__controls-next">
-                    <span class="material-icons-sharp">
-                        skip_next
-                    </span>
-                </div>
-                <div class="audio__controls-replay">
-                    <span class="material-icons-outlined">
-                        replay
-                    </span>
-                </div>
-            </div>
-       </div>
-       <div class="audio__center-time">
-           <span class="audio__center-time--start">00:00</span>
-           <input type="range" min="0" max="360" id="audioTime"> 
-           <span class="audio__center-time--duration">04:00</span>
-       </div>
-    </div>
-    <div class="audio__right">
-        <div>
-            <span class="material-icons-outlined">
-                volume_up
-            </span>
-            <input type="range" min="0" max="100" id="volumn">
+      <div class="audio__center-controls--box">
+        <div class="audio__controls-random">
+          <span class="material-icons-outlined">
+            <span class="material-icons-two-tone" [style.color]="isLoop ? 'red': ''" (click)="onLoop()">
+              loop 
+            </span> 
+          </span>
         </div>
-        <span class="material-icons-outlined listQueue">
-            queue_music
-        </span>
-    </div>    
-</section>
+        <div class="audio__controls-prev" (click)="onMove('prev')">
+          <span class="material-icons-sharp">
+            skip_previous
+          </span>
+        </div>
+        <div class="audio__controls-play" (click)="onActived()">
+          <span class="material-icons-outlined">
+            {{ isPlayAudio ? 'play_circle_filled' : 'pause_circle_filled'}}
+          </span>
+        </div>
+        <div class="audio__controls-next" (click)="onMove('next')">
+          <span class="material-icons-sharp">
+            skip_next
+          </span>
+        </div>
+        <div class="audio__controls-replay" (click)="onReload()">
+          <span class="material-icons-outlined">
+            replay
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="audio__center-time">
+      <span class="audio__center-time--start" [innerHTML]="runDuration"></span>
+      <div style="width:100%;position: relative;">
+        <span class="bar"><span class="fill" #fill></span></span>
+        <input type="range" #input id="audioTime" (change)="onSeeking($event)" [value]="currentTime ? currentTime : 0"  step="0.1"
+        min="0">
+      </div>
 
+      <span class="audio__center-time--duration" [innerHTML]="">{{song.duration ? song.duration : ''}}</span>
+    </div>
+  </div>
+  <div class="audio__right">
+    <div>
+      <span class="material-icons-outlined"   (click)="onMute()" style="cursor: pointer;">
+        {{ isVolume ? "volume_off" : "volume_up "}}
+      </span>
+      <input type="range" id="volumn" (change)="onVolume($event)" [value]="soundValue" min="0" max="100" step="1">
+    </div>
+    <span class="material-icons-outlined listQueue" (click)="openListQueue()">
+      queue_music
+    </span>
+
+
+
+
+  </div>
+</section>
